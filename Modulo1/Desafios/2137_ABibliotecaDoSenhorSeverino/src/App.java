@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class App {
 
     public static void main(String[] args) throws IOException {
-        String nome = "c://temp//livros.txt";
+        String nome = "c:/temp/livros.txt";
         try {
             System.setIn(new FileInputStream(new File(nome)));
         } catch (
