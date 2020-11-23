@@ -31,36 +31,36 @@ public class BikeService {
         bikeRepository.deleteById(id);
     }
 
-    public Bike update(Long id, Bike obj) {
+    public Bike update(Long id, Bike bike) {
         Bike entity = bikeRepository.getOne(id);
-        entity.setDescription(obj.getDescription());
-        entity.setModel(obj.getModel());
-        entity.setPrice(obj.getPrice());
-        entity.setPurchaseDate(obj.getPurchaseDate());
-        entity.setBuyerName(obj.getBuyerName());
-        entity.setStore(obj.getStore());
+        entity.setDescription(bike.getDescription());
+        entity.setModel(bike.getModel());
+        entity.setPrice(bike.getPrice());
+        entity.setPurchaseDate(bike.getPurchaseDate());
+        entity.setBuyerName(bike.getBuyerName());
+        entity.setStore(bike.getStore());
         return bikeRepository.save(entity);
     }
 
-    public Bike updatePatch(Long id, Bike obj) {
+    public Bike updatePatch(Long id, Bike bike) {
         Bike entity = bikeRepository.getOne(id);
-        if (obj.getDescription() != null){
-            entity.setDescription(obj.getDescription());
+        if (bike.getDescription() != null){
+            entity.setDescription(bike.getDescription());
         }
-        if (obj.getModel() != null) {
-            entity.setModel(obj.getModel());
+        if (bike.getModel() != null) {
+            entity.setModel(bike.getModel());
         }
-        if (obj.getPrice() != null) {
-            entity.setPrice(obj.getPrice());
+        if (bike.getPrice() != null) {
+            entity.setPrice(bike.getPrice());
         }
-        if (obj.getPurchaseDate() != null){
-        entity.setPurchaseDate(obj.getPurchaseDate());
+        if (bike.getPurchaseDate() != null){
+        entity.setPurchaseDate(bike.getPurchaseDate());
         }
-        if (obj.getBuyerName() != null){
-        entity.setBuyerName(obj.getBuyerName());
+        if (bike.getBuyerName() != null){
+        entity.setBuyerName(bike.getBuyerName());
         }
-        if (obj.getStore() != null) {
-            entity.setStore(obj.getStore());
+        if (bike.getStore() != null) {
+            entity.setStore(bike.getStore());
         }
         return bikeRepository.save(entity);
     }

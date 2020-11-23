@@ -24,9 +24,9 @@ public class BikeEndPoint {
     }
 
     @GetMapping(path = "/bikes/{id}")
-    public ResponseEntity<?> getBikeById(@PathVariable("id") Long id) {
-        Bike obj = bikeService.findById(id);
-        return ResponseEntity.ok().body(obj);
+    public ResponseEntity<Bike> getBikeById(@PathVariable("id") Long id) {
+        Bike bike = bikeService.findById(id);
+        return ResponseEntity.ok().body(bike);
     }
 
     @PostMapping(path = "/bikes")
@@ -44,14 +44,14 @@ public class BikeEndPoint {
     }
 
     @PutMapping(path = "/bikes/{id}")
-    public ResponseEntity<Bike> update(@PathVariable Long id, @RequestBody Bike obj) {
-        obj = bikeService.update(id, obj);
-        return ResponseEntity.ok().body(obj);
+    public ResponseEntity<Bike> update(@PathVariable Long id, @RequestBody Bike bike) {
+        bike = bikeService.update(id, bike);
+        return ResponseEntity.ok().body(bike);
     }
 
     @PatchMapping(path = "/bikes/{id}")
-    public ResponseEntity<Bike> updatePatch(@PathVariable Long id, @RequestBody Bike obj) {
-        obj = bikeService.updatePatch(id, obj);
-        return ResponseEntity.ok().body(obj);
+    public ResponseEntity<Bike> updatePatch(@PathVariable Long id, @RequestBody Bike bike) {
+        bike = bikeService.updatePatch(id, bike);
+        return ResponseEntity.ok().body(bike);
     }
 }

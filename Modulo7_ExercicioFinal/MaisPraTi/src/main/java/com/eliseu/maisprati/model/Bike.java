@@ -1,18 +1,13 @@
 package com.eliseu.maisprati.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Objects;
 
 @Entity
-public class Bike implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Bike {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,7 +15,6 @@ public class Bike implements Serializable {
     private String description;
     private String model;
     private Double price;
-//    @JsonFormat(pattern = "YYYY-MM-dd")
     private LocalDate purchaseDate;
     private String buyerName;
     private String store;
@@ -104,19 +98,6 @@ public class Bike implements Serializable {
                 ", buyerName='" + buyerName + '\'' +
                 ", store='" + store + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Bike bike = (Bike) o;
-        return Objects.equals(id, bike.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
     }
 
 }
