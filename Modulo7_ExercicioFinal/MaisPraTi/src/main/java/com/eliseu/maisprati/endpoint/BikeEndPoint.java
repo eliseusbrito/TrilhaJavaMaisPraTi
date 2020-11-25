@@ -25,7 +25,8 @@ public class BikeEndPoint {
     }
 
     @GetMapping(path = "/bikes/{id}")
-    public ResponseEntity<Bike> getBikeById(@PathVariable("id") Long id) {
+    public ResponseEntity<Bike> getBikeById(@PathVariable("id") Long id
+    ) {
         Bike bike = bikeService.findById(id);
         return ResponseEntity.ok().body(bike);
     }
